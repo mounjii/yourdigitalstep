@@ -137,7 +137,7 @@ const Stats: React.FC = () => {
     <section id="stats" ref={sectionRef} className="bg-transparent py-16 sm:py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-text">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-brand-text tracking-tight">
             {mainWords}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end">
               {gradientWords}
@@ -146,7 +146,7 @@ const Stats: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {statsItems.map((item, index) => (
-             <div key={index} className="border border-white/10 rounded-xl p-8 bg-brand-secondary/95 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-accent-start/50 hover:bg-white/5">
+             <div key={index} className="border border-white/10 rounded-2xl p-8 bg-brand-secondary/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-accent-start/50 hover:shadow-xl hover:shadow-accent-start/10">
               <StatCounter 
                 endValue={item.endValue}
                 textValue={item.textValue}

@@ -362,20 +362,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, initialDat
            )}
            <div className="flex items-center">
               {step > 1 && (
-                <button type="button" onClick={handleBack} className="bg-white/5 border border-white/10 text-brand-text-secondary font-semibold px-8 py-3 rounded-lg hover:bg-white/10 transition-colors duration-300 flex items-center gap-2">
+                <button type="button" onClick={handleBack} className="btn-secondary text-brand-text-secondary px-8 py-3 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                   {t('projectModal.buttons.back')}
                 </button>
               )}
               <div className="flex-grow"></div>
               {step < totalSteps && (
-                <button type="button" onClick={handleNext} disabled={!isStepValid()} className="bg-gradient-to-r from-accent-start to-accent-end text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+                <button type="button" onClick={handleNext} disabled={!isStepValid()} className="btn-primary px-8 py-3 disabled:opacity-50 disabled:cursor-not-allowed">
                   {t('projectModal.buttons.next')}
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </button>
               )}
               {step === totalSteps && (
-                <button type="submit" form="project-modal-form" disabled={!isStepValid() || isSubmitting} className="bg-gradient-to-r from-accent-start to-accent-end text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed min-w-[160px]">
+                <button type="submit" form="project-modal-form" disabled={!isStepValid() || isSubmitting} className="btn-primary px-8 py-3 disabled:opacity-50 disabled:cursor-not-allowed min-w-[160px]">
                   {isSubmitting ? t('forms.submitting') : t('projectModal.buttons.submit')}
                 </button>
               )}

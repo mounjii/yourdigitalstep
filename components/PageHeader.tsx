@@ -20,7 +20,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ titleKey, subtitleKey }) => {
       <div className="absolute top-0 left-0 w-64 h-64 bg-accent-start/10 rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent-end/10 rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
       <div className="container mx-auto px-6 text-center relative z-10">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-text mb-4 leading-tight">
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-text mb-4 leading-tight tracking-tight">
           {mainWords}{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end">
             {gradientWords}

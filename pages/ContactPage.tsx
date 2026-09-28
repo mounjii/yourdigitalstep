@@ -96,8 +96,8 @@ const ContactPage: React.FC = () => {
                         {whyChooseUsItems.map((item, index) => {
                            const Icon = whyChooseUsIcons[index];
                            return (
-                             <div key={index} className="group bg-brand-secondary/95 backdrop-blur-sm p-8 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent-start/50 hover:bg-white/5">
-                                 <div className="bg-gradient-to-br from-accent-start to-accent-end rounded-lg w-16 h-16 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                             <div key={index} className="group bg-brand-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/10 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent-start/50 hover:shadow-xl hover:shadow-accent-start/10">
+                                 <div className="bg-gradient-to-br from-accent-start to-accent-end rounded-2xl w-16 h-16 flex items-center justify-center mb-6 shadow-lg shadow-accent-start/30">
                                      <Icon className="w-8 h-8 text-white" />
                                  </div>
                                  <h3 className="text-xl font-bold text-brand-text mb-2 transition-colors">{item.title}</h3>
@@ -111,7 +111,7 @@ const ContactPage: React.FC = () => {
                 {/* Main Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
                     {/* Form Section */}
-                    <div className="lg:col-span-3 bg-brand-secondary/95 backdrop-blur-sm p-8 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent-start/50 hover:drop-shadow-glow">
+                    <div className="lg:col-span-3 bg-brand-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/10">
                          <h2 className="flex items-center text-3xl font-bold text-brand-text mb-8">
                             <span className="w-1 h-8 bg-gradient-to-b from-accent-start to-accent-end rounded-full mr-3"></span>
                             {t('contactPage.form.title')}
@@ -153,7 +153,7 @@ const ContactPage: React.FC = () => {
                                 {error && (
                                   <p className="text-red-400 text-sm text-center mb-4">{error}</p>
                                 )}
-                                <button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-accent-start to-accent-end text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
+                                <button type="submit" disabled={isSubmitting} className="btn-primary w-full px-8 py-3 disabled:opacity-60 disabled:cursor-not-allowed">
                                     {isSubmitting ? t('forms.submitting') : t('contactPage.form.sendMessage')}
                                     {!isSubmitting && <span className="font-light text-xl">&rarr;</span>}
                                 </button>
@@ -163,7 +163,7 @@ const ContactPage: React.FC = () => {
 
                     {/* Info Section */}
                     <div className="lg:col-span-2 space-y-8">
-                        <div className="bg-brand-secondary/95 backdrop-blur-sm p-8 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent-start/50 hover:bg-white/5">
+                        <div className="bg-brand-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/10">
                             <h3 className="flex items-center text-2xl font-bold text-brand-text mb-6">
                                <span className="w-1 h-7 bg-gradient-to-b from-accent-start to-accent-end rounded-full mr-3"></span>
                                {t('contactPage.getInTouch.title')}
@@ -189,7 +189,7 @@ const ContactPage: React.FC = () => {
                                 </div>
                            </div>
                         </div>
-                        <div className="bg-brand-secondary/95 backdrop-blur-sm p-8 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent-start/50 hover:bg-white/5">
+                        <div className="bg-brand-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/10">
                            <h3 className="flex items-center text-2xl font-bold text-brand-text mb-6">
                                <span className="w-1 h-7 bg-gradient-to-b from-accent-start to-accent-end rounded-full mr-3"></span>
                                {t('contactPage.ourProcess.title')}

@@ -108,7 +108,7 @@ const SpecialOfferPage: React.FC = () => {
                                 const [icon, ...nameParts] = pkg.name.split(' ');
                                 const nameText = nameParts.join(' ');
                                 return (
-                                <div key={pkg.name} className={`relative group bg-brand-secondary/95 backdrop-blur-sm rounded-2xl border transition-all duration-300 ${pkg.isMostPopular ? 'border-accent-start/80 drop-shadow-glow lg:scale-105 my-8 lg:my-0' : 'border-white/10 hover:border-accent-start/80 hover:drop-shadow-glow hover:scale-105'}`}>
+                                <div key={pkg.name} className={`relative group bg-brand-secondary/80 backdrop-blur-md rounded-2xl border transition-all duration-300 ease-out ${pkg.isMostPopular ? 'border-accent-start/80 shadow-xl shadow-accent-start/20 lg:-translate-y-2 my-8 lg:my-0' : 'border-white/10 hover:border-accent-start/80 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent-start/10'}`}>
                                     {pkg.isMostPopular && (
                                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-accent-start to-accent-end text-white text-sm font-bold px-4 py-1 rounded-full">
                                             {t('specialOfferPage.mostPopular')}
@@ -156,7 +156,7 @@ const SpecialOfferPage: React.FC = () => {
                                                     <button
                                                         type="submit"
                                                         disabled={isSubmitting}
-                                                        className="w-full font-semibold py-3 rounded-lg transition-all duration-300 bg-gradient-to-r from-green-400 to-accent-blue text-white hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
+                                                        className="btn-primary w-full py-3 disabled:opacity-60 disabled:cursor-not-allowed"
                                                     >
                                                         {isSubmitting ? t('forms.submitting') : t('specialOfferPage.packageForm.submitButton')}
                                                     </button>
@@ -164,7 +164,7 @@ const SpecialOfferPage: React.FC = () => {
                                             ) : (
                                                 <button 
                                                     onClick={() => { setFormVisibleFor(pkg.name); setError(null); }}
-                                                    className={`w-full font-semibold py-3 rounded-lg transition-all duration-300 ${pkg.isMostPopular ? 'bg-gradient-to-r from-accent-start to-accent-end text-white hover:opacity-90' : 'bg-white/5 text-brand-text-secondary group-hover:bg-gradient-to-r group-hover:from-accent-start group-hover:to-accent-end group-hover:text-white'}`}
+                                                    className={`w-full py-3 ${pkg.isMostPopular ? 'btn-primary' : 'btn-secondary text-brand-text-secondary group-hover:border-accent-start'}`}
                                                 >
                                                     {pkg.cta}
                                                 </button>
@@ -193,8 +193,8 @@ const SpecialOfferPage: React.FC = () => {
                            {beyondLaunch.features.map((feature: any, index: number) => {
                                 const Icon = beyondLaunchIcons[index];
                                 return (
-                                    <div key={feature.title} className="group bg-brand-secondary/95 backdrop-blur-sm text-left p-8 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent-start/50 hover:bg-white/5 flex flex-col">
-                                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent-start to-accent-end flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
+                                    <div key={feature.title} className="group bg-brand-secondary/80 backdrop-blur-md text-left p-8 rounded-2xl border border-white/10 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent-start/50 hover:shadow-xl hover:shadow-accent-start/10 flex flex-col">
+                                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-start to-accent-end flex items-center justify-center mb-6 shadow-lg shadow-accent-start/30 flex-shrink-0">
                                             <Icon className="w-8 h-8 text-white" />
                                         </div>
                                         <h3 className="text-2xl font-bold text-brand-text mb-4 transition-colors duration-300">{feature.title}</h3>

@@ -11,7 +11,7 @@ const ArrowUpRightIcon: React.FC<{ className?: string }> = (props) => (
 const PortfolioCard: React.FC<{ item: PortfolioItem; onClick: () => void; }> = ({ item, onClick }) => (
     <button 
         onClick={onClick} 
-        className="group text-left relative overflow-hidden rounded-xl border border-white/10 bg-brand-secondary transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/5 hover:border-accent-start h-full w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-primary focus-visible:ring-accent-start"
+        className="group text-left relative overflow-hidden rounded-2xl border border-white/10 bg-brand-secondary/90 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent-start/60 hover:shadow-xl hover:shadow-accent-start/10 h-full w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-primary focus-visible:ring-accent-start"
         aria-label={`View details for ${item.title}`}
     >
         <img src={imageStore[item.image]} alt={item.title} loading="lazy" className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" />

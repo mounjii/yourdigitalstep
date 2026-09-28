@@ -22,11 +22,11 @@ const Footer: React.FC = () => {
   const navLinks = Array.isArray(navLinksData) ? navLinksData : [];
 
   return (
-    <footer className="relative z-30 bg-brand-secondary/30 backdrop-blur-lg border-t border-white/10">
+    <footer className="relative z-30 bg-brand-secondary/40 backdrop-blur-xl border-t border-white/10">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
-            <Link to="/" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end">
+            <Link to="/" className="font-display text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end">
               YourDigitalStep
             </Link>
             <p className="mt-4 text-brand-text-secondary max-w-xs">

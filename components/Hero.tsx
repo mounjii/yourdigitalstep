@@ -27,37 +27,38 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative bg-transparent py-24 md:py-28 lg:py-32 min-h-screen flex flex-col justify-center overflow-hidden">
+    <section id="home" className="relative bg-transparent pt-16 pb-24 md:pt-20 md:pb-28 min-h-[90vh] flex flex-col justify-center overflow-hidden">
        <div className="absolute top-0 left-0 w-96 h-96 bg-accent-start/10 rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-end/10 rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-brand-text mb-8 md:mb-16 leading-tight">
+        <p className="inline-flex items-center gap-2 mb-8 rounded-full border border-white/15 bg-brand-secondary/60 px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-wide text-brand-text-secondary backdrop-blur-md">
+          <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-accent-start to-accent-end" />
+          {t('hero.eyebrow')}
+        </p>
+        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold text-brand-text mb-6 md:mb-8 leading-[1.05] tracking-tight max-w-5xl mx-auto">
           <Trans i18nKey="hero.title">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end" />
           </Trans>
         </h1>
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-brand-text-secondary mb-10">
+        <p className="max-w-2xl mx-auto text-base md:text-xl text-brand-text-secondary mb-10 leading-relaxed">
           {t('hero.subtitle')}
         </p>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <button 
             onClick={() => onGetStartedClick()} 
-            className="group bg-gradient-to-r from-accent-start to-accent-end text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:drop-shadow-glow-bright"
+            className="btn-primary group w-full sm:w-auto flex items-center justify-center gap-2"
           >
             {t('hero.getStarted')}
-            <span className="font-light transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
           </button>
           <button 
             onClick={(e) => handleLinkClick(e, '#services')}
-            className="group text-brand-text-secondary hover:text-brand-text font-semibold transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 hover:-translate-y-0.5"
+            className="btn-secondary group w-full sm:w-auto flex items-center justify-center gap-2 text-brand-text"
           >
-            <ArrowRightCircleIcon className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
-            <span className="relative">
-              {t('hero.learnMore')}
-              <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-accent-start to-accent-end transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-            </span>
+            <ArrowRightCircleIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            {t('hero.learnMore')}
           </button>
         </div>
       </div>

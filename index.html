@@ -28,6 +28,7 @@
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
+              display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
             },
              animation: {
               'fade-in-fast': 'fadeIn 0.2s ease-in-out',
@@ -71,10 +72,10 @@
     <style>
       /* Light Theme (Default) */
       :root {
-        --color-brand-primary: 249 250 251; /* gray-50: #F9FAFB */
-        --color-brand-secondary: 255 255 255; /* white: #FFFFFF */
-        --color-brand-text: 31 41 55; /* gray-800: #1F2937 */
-        --color-brand-text-secondary: 107 114 128; /* gray-500: #6B7280 */
+        --color-brand-primary: 246 244 251;
+        --color-brand-secondary: 255 255 255;
+        --color-brand-text: 24 20 43;
+        --color-brand-text-secondary: 92 86 112;
         
         /* Constellation Background */
         --color-constellation-lines: 96, 165, 250; /* accent-blue */
@@ -119,6 +120,73 @@
         color: rgb(var(--color-brand-text));
         transition: background-color 0.3s ease, color 0.3s ease;
         background-color: rgb(var(--color-brand-primary));
+        font-feature-settings: "ss01" on, "cv11" on;
+      }
+
+      h1, h2, h3, .font-display {
+        font-family: "Plus Jakarta Sans", Inter, sans-serif;
+        letter-spacing: -0.03em;
+      }
+
+      ::selection {
+        background: rgba(124, 107, 241, 0.28);
+        color: inherit;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -4rem;
+        z-index: 100;
+        border-radius: 999px;
+        background: #7C6BF1;
+        color: #fff;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+      }
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background-image: linear-gradient(135deg, #7C6BF1 0%, #F472B6 100%);
+        color: #fff;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.85rem 1.7rem;
+        box-shadow: 0 10px 30px -12px rgba(124, 107, 241, 0.65);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.05);
+        box-shadow: 0 16px 36px -12px rgba(124, 107, 241, 0.75);
+      }
+      .btn-secondary {
+        border-radius: 999px;
+        padding: 0.85rem 1.7rem;
+        font-weight: 600;
+        border: 1px solid rgb(var(--color-brand-text) / 0.12);
+        background: rgb(var(--color-brand-secondary) / 0.55);
+        backdrop-filter: blur(12px);
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      }
+      .btn-secondary:hover {
+        transform: translateY(-1px);
+        border-color: #7C6BF1;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
       }
 
       /* Scrollbar Styles */
@@ -152,7 +220,7 @@
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <script type="importmap">
 {
   "imports": {
@@ -171,7 +239,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="text-brand-text">
+  <body class="text-brand-text antialiased">
     <div id="root"></div>
     <div id="modal-root"></div>
     <script type="module" src="/src/index.tsx"></script>

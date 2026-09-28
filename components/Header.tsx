@@ -53,17 +53,22 @@ const Header: React.FC<{ currentPath: string }> = ({ currentPath }) => {
   }
 
   const Logo = () => (
-    <Link to="/" className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end whitespace-nowrap">
-      YourDigitalStep
+    <Link to="/" className="flex items-center gap-2.5 group">
+      <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue via-accent-start to-accent-end text-white text-sm font-bold shadow-lg shadow-accent-start/30">
+        Y
+      </span>
+      <span className="font-display text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end whitespace-nowrap">
+        YourDigitalStep
+      </span>
     </Link>
   );
 
   return (
     <>
-      <header className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-brand-primary/95 backdrop-blur-sm shadow-2xl shadow-black/20 py-5' : 'bg-brand-primary/80 backdrop-blur-md py-5'}`}>
+      <header className={`sticky top-0 z-40 transition-all duration-300 border-b ${isScrolled ? 'bg-brand-primary/80 backdrop-blur-xl border-white/10 py-3 shadow-lg shadow-black/5' : 'bg-brand-primary/50 backdrop-blur-md border-transparent py-4'}`}>
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           <Logo />
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-7">
             {Array.isArray(navLinks) && navLinks.map((link) => {
               const isActive = currentPath === link.href;
               return (
@@ -71,7 +76,7 @@ const Header: React.FC<{ currentPath: string }> = ({ currentPath }) => {
                   key={link.href}
                   to={link.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`relative group font-medium transition-all duration-300 hover:scale-105 hover:drop-shadow-glow ${isActive ? 'text-brand-text' : 'text-brand-text-secondary hover:text-brand-text'}`}
+                  className={`relative group text-sm font-semibold tracking-wide transition-colors duration-200 ${isActive ? 'text-brand-text' : 'text-brand-text-secondary hover:text-brand-text'}`}
                 >
                   {link.label}
                   <span className={`absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-accent-start to-accent-end transform transition-transform duration-300 ease-out ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
@@ -79,10 +84,10 @@ const Header: React.FC<{ currentPath: string }> = ({ currentPath }) => {
               )
             })}
           </nav>
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-3">
               <ThemeSwitcher />
               <LanguageSwitcher />
-              <button onClick={() => onGetStartedClick()} className="bg-gradient-to-r from-accent-start to-accent-end text-white font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-all duration-300 hover:drop-shadow-glow">
+              <button onClick={() => onGetStartedClick()} className="btn-primary text-sm px-5 py-2.5">
                 {t('nav.getStarted')}
               </button>
           </div>
@@ -94,7 +99,6 @@ const Header: React.FC<{ currentPath: string }> = ({ currentPath }) => {
             </button>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent-start to-accent-end opacity-75 blur-sm" />
       </header>
       
       {/* Mobile Menu */}
@@ -132,7 +136,7 @@ const Header: React.FC<{ currentPath: string }> = ({ currentPath }) => {
                   ))}
                    <button 
                       onClick={handleGetStartedMobile} 
-                      className="bg-gradient-to-r from-accent-start to-accent-end text-white text-lg font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition-all duration-300 mt-6 inline-block opacity-0 transform translate-x-4 hover:drop-shadow-glow"
+                      className="btn-primary text-lg mt-6 inline-block opacity-0 transform translate-x-4"
                       style={{
                         transitionDelay: `${navLinks.length * 100}ms`,
                         opacity: isMenuOpen ? 1 : 0,

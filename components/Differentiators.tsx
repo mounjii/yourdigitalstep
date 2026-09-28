@@ -8,8 +8,8 @@ import DataIcon from './icons/DataIcon';
 const DifferentiatorCard: React.FC<{ differentiator: Differentiator }> = ({ differentiator }) => {
     const Icon = differentiator.icon;
     return (
-        <div className="group flex flex-col items-start gap-6 bg-brand-secondary/95 backdrop-blur-sm p-8 rounded-xl border border-white/10 h-full transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white/5 hover:border-accent-start/50">
-            <div className="bg-gradient-to-br from-accent-start to-accent-end rounded-lg w-16 h-16 flex items-center justify-center flex-shrink-0">
+        <div className="group flex flex-col items-start gap-6 bg-brand-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/10 h-full transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent-start/50 hover:shadow-xl hover:shadow-accent-start/10">
+            <div className="bg-gradient-to-br from-accent-start to-accent-end rounded-2xl w-14 h-14 flex items-center justify-center flex-shrink-0 shadow-lg shadow-accent-start/30">
                 <Icon className="w-8 h-8 text-white transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div>
@@ -53,7 +53,7 @@ const Differentiators: React.FC<DifferentiatorsProps> = ({ showHeading = true })
             <div className="container mx-auto px-6">
                 {showHeading && (
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-brand-text">
+                        <h2 className="font-display text-4xl md:text-5xl font-bold text-brand-text tracking-tight">
                         {mainWords}{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end">
                             {gradientWords}

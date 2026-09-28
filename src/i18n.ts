@@ -17,6 +17,7 @@ const resources = {
         "getStarted": "Get Started"
       },
       "hero": {
+        "eyebrow": "Strategy, design & engineering",
         "title": "<0>Clarity</0> in a Complex<1> Digital World</1>",
         "subtitle": "We don't just build websites; we build digital experiences that drive growth, engage audiences, and deliver measurable results.",
         "getStarted": "Start Your Project",
@@ -759,6 +760,7 @@ const resources = {
         "getStarted": "Commencer"
       },
       "hero": {
+        "eyebrow": "Stratégie, design et ingénierie",
         "title": "<0>Clarté</0> dans un Monde<1> Numérique Complexe</1>",
         "subtitle": "Nous ne nous contentons pas de créer des sites web ; nous construisons des expériences numériques qui stimulent la croissance, engagent les publics et fournissent des résultats mesurables.",
         "getStarted": "Démarrer Votre Projet",
@@ -1501,6 +1503,7 @@ const resources = {
         "getStarted": "Zacznij"
       },
       "hero": {
+        "eyebrow": "Strategia, design i inżynieria",
         "title": "<0>Jasność</0> w Złożonym<1> Cyfrowym Świecie</1>",
         "subtitle": "Nie tylko budujemy strony internetowe; tworzymy cyfrowe doświadczenia, które napędzają wzrost, angażują odbiorców i przynoszą wymierne rezultaty.",
         "getStarted": "Rozpocznij Swój Projekt",

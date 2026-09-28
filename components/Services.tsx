@@ -26,10 +26,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
     return (
         <button 
             onClick={onClick} 
-            className="group h-full w-full text-left bg-brand-secondary/95 backdrop-blur-sm p-8 rounded-xl border-2 border-white/10 hover:scale-105 hover:bg-white/5 hover:border-accent-start transition-all duration-300 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-primary focus-visible:ring-accent-start"
+            className="group h-full w-full text-left bg-brand-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:-translate-y-1 hover:border-accent-start/60 hover:shadow-xl hover:shadow-accent-start/10 transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-primary focus-visible:ring-accent-start"
             aria-label={`View details for ${service.title}`}
         >
-            <div className="bg-gradient-to-br from-accent-start to-accent-end rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-accent-start to-accent-end rounded-2xl w-14 h-14 flex items-center justify-center mb-6 shadow-lg shadow-accent-start/30">
                 <Icon className="w-8 h-8 text-white transition-transform duration-300 group-hover:scale-110" />
             </div>
             <h3 className="text-2xl font-bold text-brand-text group-hover:text-brand-accent dark:group-hover:text-accent-end transition-all duration-300 mb-2">{service.title}</h3>
@@ -112,7 +112,7 @@ const Services: React.FC<ServicesProps> = ({ showHeading = true }) => {
         <div className="container mx-auto px-6">
           {showHeading && (
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-brand-text">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-brand-text tracking-tight">
                   {mainWords}{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end">
                     {gradientWords}

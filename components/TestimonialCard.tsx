@@ -9,7 +9,7 @@ const StarIcon: React.FC<{ className?: string }> = (props) => (
 );
 
 const TestimonialCard: React.FC<{ testimonial: Omit<Testimonial, 'rating'>, isInteractive?: boolean }> = ({ testimonial, isInteractive = false }) => (
-  <div className={`bg-brand-secondary p-8 rounded-xl border border-white/10 flex flex-col h-full ${!isInteractive ? 'transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-white/5 hover:border-accent-start/50' : 'bg-brand-primary/50'}`}>
+  <div className={`bg-brand-secondary/90 p-8 rounded-2xl border border-white/10 flex flex-col h-full ${!isInteractive ? 'transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent-start/50 hover:shadow-lg' : 'bg-brand-primary/50'}`}>
     <div className="flex text-yellow-400 mb-4">
         {[...Array(5)].map((_, i) => <StarIcon key={i} className="w-5 h-5"/>)}
     </div>

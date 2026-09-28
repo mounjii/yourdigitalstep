@@ -15,10 +15,10 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="bg-transparent py-16 sm:py-20">
       <div className="container mx-auto px-6 text-center">
-        <div className="max-w-3xl mx-auto bg-brand-secondary/95 backdrop-blur-sm p-10 md:p-16 rounded-2xl shadow-2xl relative overflow-hidden border border-white/10 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:border-accent-start/50 hover:drop-shadow-glow">
+        <div className="max-w-3xl mx-auto bg-brand-secondary/80 backdrop-blur-md p-10 md:p-16 rounded-3xl relative overflow-hidden border border-white/10 shadow-xl shadow-accent-start/10">
           <div className="absolute -top-10 -left-10 w-32 h-32 bg-accent-start/5 rounded-full blur-xl"></div>
           <div className="absolute -bottom-16 -right-5 w-48 h-48 bg-accent-end/5 rounded-full blur-xl"></div>
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-4 relative z-10">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-brand-text mb-4 relative z-10 tracking-tight">
             {mainWords}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-start to-accent-end">
               {gradientWords}
@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
           <div className="relative z-10">
             <button
               onClick={() => onLetsTalkClick()}
-              className="bg-gradient-to-r from-accent-start to-accent-end text-white font-bold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity duration-300"
+              className="btn-primary"
             >
               {t('contact.cta')}
             </button>

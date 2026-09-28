@@ -18,10 +18,10 @@ const MainLayout: React.FC = () => {
   
   return ( 
     <>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <InteractiveBackground />
-      {/* Pass the current path to the Header */}
       <Header currentPath={pathname} />
-      <main>
+      <main id="main-content">
         <Suspense fallback={
           <div style={{
             display: 'flex',
