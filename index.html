@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourDigitalStep | Clarity in a Complex Digital World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': 'rgb(var(--color-brand-primary) / <alpha-value>)',
+              'brand-secondary': 'rgb(var(--color-brand-secondary) / <alpha-value>)',
+              'brand-text': 'rgb(var(--color-brand-text) / <alpha-value>)',
+              'brand-text-secondary': 'rgb(var(--color-brand-text-secondary) / <alpha-value>)',
+              'brand-accent': '#7C6BF1',
+              'brand-accent-hover': '#6954E9',
+              'accent-blue': '#60A5FA',
+              'accent-start': '#7C6BF1',
+              'accent-end': '#F472B6',
+              'accent-end-bright': '#F9A8D4',
+              'purple-400': '#c084fc',
+              'green-400': '#4ade80',
+              'orange-400': '#fb923c',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+             animation: {
+              'fade-in-fast': 'fadeIn 0.2s ease-in-out',
+              'gentle-bounce': 'gentleBounce 1.5s infinite',
+              'mouse-scroll': 'mouseScroll 1.5s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              gentleBounce: {
+                '0%, 100%': { 
+                  transform: 'translateY(-15%)',
+                  animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
+                },
+                '50%': { 
+                  transform: 'translateY(0)',
+                  animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+                },
+              },
+              mouseScroll: {
+                '0%': { opacity: '1', transform: 'translateY(0)' },
+                '100%': { opacity: '0', transform: 'translateY(8px)' }
+              },
+            },
+            dropShadow: {
+              'glow': [
+                '0 0 6px rgba(var(--color-glow-end-rgb), var(--glow-end-opacity))',
+                '0 0 10px rgba(var(--color-glow-start-rgb), var(--glow-start-opacity))'
+              ],
+              'glow-bright': [
+                '0 0 6px rgba(var(--color-glow-bright-rgb), var(--glow-bright-opacity))',
+                '0 0 10px rgba(var(--color-glow-bright-rgb), var(--glow-bright-opacity))'
+              ]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Light Theme (Default) */
+      :root {
+        --color-brand-primary: 249 250 251; /* gray-50: #F9FAFB */
+        --color-brand-secondary: 255 255 255; /* white: #FFFFFF */
+        --color-brand-text: 31 41 55; /* gray-800: #1F2937 */
+        --color-brand-text-secondary: 107 114 128; /* gray-500: #6B7280 */
+        
+        /* Constellation Background */
+        --color-constellation-lines: 96, 165, 250; /* accent-blue */
+        --color-constellation-particle: rgba(96, 165, 250, 0.7); /* accent-blue with opacity */
+        --constellation-line-opacity-multiplier: 0.4;
+        
+        /* Glow colors for light theme */
+        --color-glow-start-rgb: 105, 84, 233; /* Darker accent-start */
+        --color-glow-end-rgb: 217, 70, 143; /* Darker accent-end */
+        --color-glow-bright-rgb: 236, 77, 150;
+
+        /* Glow opacity for light theme */
+        --glow-start-opacity: 0.4;
+        --glow-end-opacity: 0.5;
+        --glow-bright-opacity: 0.5;
+      }
+      
+      /* Dark Theme */
+      html.dark {
+        --color-brand-primary: 11 8 25; /* #0B0819 */
+        --color-brand-secondary: 26 20 46; /* #1A142E */
+        --color-brand-text: 255 255 255; /* #FFFFFF */
+        --color-brand-text-secondary: 209 213 219; /* gray-300: #D1D5DB */
+        
+        /* Constellation Background - VIBRANT */
+        --color-constellation-lines: 96, 165, 250; /* accent-blue */
+        --color-constellation-particle: rgba(96, 165, 250, 0.8); /* A glowing blue */
+        --constellation-line-opacity-multiplier: 0.6; /* Increased for visibility on dark bg */
+
+        /* Glow colors for dark theme */
+        --color-glow-start-rgb: 95, 75, 219;
+        --color-glow-end-rgb: 232, 77, 138;
+        --color-glow-bright-rgb: 249, 168, 212;
+
+        /* Glow opacity for dark theme */
+        --glow-start-opacity: 0.7;
+        --glow-end-opacity: 0.8;
+        --glow-bright-opacity: 0.8;
+      }
+      
+      body {
+        color: rgb(var(--color-brand-text));
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-color: rgb(var(--color-brand-primary));
+      }
+
+      /* Scrollbar Styles */
+      /* For Webkit browsers (Chrome, Safari) */
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      /* For Firefox */
+      * { scrollbar-width: thin; }
+
+      /* Light Mode Scrollbar */
+      ::-webkit-scrollbar-track { background: #F1F5F9; /* gray-100 */ }
+      ::-webkit-scrollbar-thumb { background-color: #94A3B8; /* gray-400 */ border-radius: 10px; border: 2px solid #F1F5F9; }
+      ::-webkit-scrollbar-thumb:hover { background-color: #64748B; /* gray-500 */ }
+      * { scrollbar-color: #94A3B8 #F1F5F9; }
+
+      /* Dark Mode Scrollbar */
+      html.dark ::-webkit-scrollbar-track { background: #1A142E; }
+      html.dark ::-webkit-scrollbar-thumb { background-color: #7C6BF1; border-color: #1A142E; }
+      html.dark ::-webkit-scrollbar-thumb:hover { background-color: #6954E9; }
+      html.dark * { scrollbar-color: #7C6BF1 #1A142E; }
+      
+      /* Custom Prose Styles for Legal Pages */
+      .prose { --tw-prose-body: rgb(var(--color-brand-text-secondary)); --tw-prose-headings: rgb(var(--color-brand-text)); --tw-prose-lead: #4b5563; --tw-prose-links: #7C6BF1; --tw-prose-bold: rgb(var(--color-brand-text)); --tw-prose-counters: #6b7280; --tw-prose-bullets: #7C6BF1; --tw-prose-hr: #e5e7eb; --tw-prose-quotes: #111827; --tw-prose-quote-borders: #e5e7eb; --tw-prose-captions: #6b7280; --tw-prose-code: #111827; --tw-prose-pre-code: #e5e7eb; --tw-prose-pre-bg: #1f2937; --tw-prose-invert-body: #d1d5db; --tw-prose-invert-headings: #fff; --tw-prose-invert-lead: #9ca3af; --tw-prose-invert-links: #fff; --tw-prose-invert-bold: #fff; --tw-prose-invert-counters: #9ca3af; --tw-prose-invert-bullets: #4b5563; --tw-prose-invert-hr: #374151; --tw-prose-invert-quotes: #f3f4f6; --tw-prose-invert-quote-borders: #374151; --tw-prose-invert-captions: #9ca3af; --tw-prose-invert-code: #fff; --tw-prose-invert-pre-code: #d1d5db; --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%); }
+      .prose h2 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; }
+      .prose p, .prose ul, .prose ol { margin-bottom: 1.25rem; line-height: 1.75; }
+      .prose ul, .prose ol { padding-left: 1.75rem; }
+      .prose li { margin-bottom: 0.5rem; }
+      .prose ul li { list-style-type: disc; }
+      .prose ol li { list-style-type: decimal; }
+      .prose a { text-decoration: none; transition: color 0.2s ease-in-out; }
+      .prose a:hover { color: #F9A8D4; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.5",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-i18next": "https://aistudiocdn.com/react-i18next@^16.2.4",
+    "i18next": "https://aistudiocdn.com/i18next@^25.6.1",
+    "i18next-browser-languagedetector": "https://aistudiocdn.com/i18next-browser-languagedetector@^8.2.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="text-brand-text">
+    <div id="root"></div>
+    <div id="modal-root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+</body>
+</html>
